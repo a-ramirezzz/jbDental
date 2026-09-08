@@ -11,6 +11,7 @@ function FacilityFigure({ image }: { image: FacilityImage }) {
         alt={image.alt}
         width={image.width}
         height={image.height}
+        loading={"loading" in image ? image.loading : "lazy"}
         sizes={image.variant === "featured"
           ? "(min-width: 1200px) 700px, (min-width: 768px) 58vw, calc(100vw - 40px)"
           : "(min-width: 1200px) 320px, (min-width: 768px) 32vw, calc(100vw - 40px)"}

@@ -1,9 +1,20 @@
-// Replace these provisional anchors as the remaining sections and booking channel are added.
 export const site = {
   name: "JB Consultorio Dental",
-  appointmentHref: "#contacto",
   servicesHref: "#servicios",
+  appointmentMessage: "Hola! Quisiera información sobre una cita",
+  whatsappContacts: [
+    { formattedNumber: "+52 744 588 6161", whatsappNumber: "527445886161" },
+    { formattedNumber: "+52 744 233 4294", whatsappNumber: "527442334294" },
+  ],
+  social: {
+    instagram: "https://www.instagram.com/dental.jb/",
+    facebook: "https://www.facebook.com/p/JB-Dental-100063535152319/?locale=es_LA",
+  },
 };
+
+export function getWhatsAppHref(whatsappNumber: string) {
+  return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(site.appointmentMessage)}`;
+}
 
 export const navigation = [
   { label: "Inicio", href: "#inicio" },
@@ -64,6 +75,7 @@ export const facilitiesContent = {
       width: 960,
       height: 1280,
       variant: "reception",
+      loading: "eager" as const,
     },
   ],
 };

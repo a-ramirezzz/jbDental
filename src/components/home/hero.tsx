@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowIcon } from "@/components/ui/arrow-icon";
 import { site } from "@/lib/site";
+import { AppointmentButton } from "@/components/appointment/appointment-button";
 
 export function Hero() {
   return (
@@ -10,7 +11,7 @@ export function Hero() {
         <h1 id="hero-title">Tu sonrisa merece <span>atención especializada.</span></h1>
         <p className="hero-description">Cuidamos tu salud dental con atención personalizada, un espacio cómodo y un enfoque profesional en cada consulta.</p>
         <div className="hero-actions">
-          <a className="button button-primary" href={site.appointmentHref}>Agendar cita <ArrowIcon /></a>
+          <AppointmentButton className="button button-primary">Agendar cita <ArrowIcon /></AppointmentButton>
           <a className="button button-secondary" href={site.servicesHref}>Conocer servicios</a>
         </div>
         <div className="trust-note">
